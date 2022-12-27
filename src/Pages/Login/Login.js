@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+	const handleLogin = (event) => {
+		event.preventDefault();
+	};
 	return (
 		<div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 			<div className="w-full max-w-md space-y-8">
@@ -15,7 +18,7 @@ const Login = () => {
 						Sign in to your account
 					</h2>
 				</div>
-				<form className="mt-8 space-y-6" action="#" method="POST">
+				<form onSubmit={handleLogin} className="mt-8 space-y-6">
 					<input type="hidden" name="remember" value="true" />
 					<div className="-space-y-px rounded-md shadow-sm">
 						<div className="py-5">

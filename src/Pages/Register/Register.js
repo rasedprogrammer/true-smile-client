@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Register = () => {
+	const { createUser } = useContext(AuthContext);
+	const handleSignUp = (event) => {
+		event.preventDefault();
+		const form = event.target;
+		const email = form.email.value;
+		const password = form.password.value;
+		createUser(email, password)
+			.then((result) => {
+				const user = result.user;
+				console.log(user);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 	return (
 		<div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 			<div className="w-full max-w-md space-y-8">
@@ -15,7 +31,7 @@ const Register = () => {
 						Sign up for a new account
 					</h2>
 				</div>
-				<form className="mt-8 space-y-6" action="#" method="POST">
+				<form onSubmit={handleSignUp} className="mt-8 space-y-6">
 					<input type="hidden" name="remember" value="true" />
 					<div className="-space-y-px rounded-md shadow-sm">
 						<div className="py-5">
