@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-	const { img, title, fee, description, rating } = service;
+	const { _id, img, title, fee, description, rating } = service;
 	const MAX_LENGTH = 100;
 	return (
 		<div className="card w-96 bg-base-100 shadow-xl">
@@ -10,7 +11,6 @@ const ServiceCard = ({ service }) => {
 			</figure>
 			<div className="card-body items-center text-center">
 				<h2 className="card-title">{title}</h2>
-				{/* <p></p> */}
 				{description.length > MAX_LENGTH ? (
 					<div>{`${description.substring(0, MAX_LENGTH)}...`}</div>
 				) : (
@@ -21,7 +21,9 @@ const ServiceCard = ({ service }) => {
 					<p className="font-bold">Rating: {rating}</p>
 				</div>
 				<div className="card-actions pt-5">
-					<button className="btn btn-primary">View More</button>
+					<Link to={`/service/${_id}`}>
+						<button className="btn btn-primary">View More</button>
+					</Link>
 					<button className="btn btn-success">Add Review</button>
 				</div>
 			</div>

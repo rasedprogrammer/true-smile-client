@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Header = () => {
+	const { user } = useContext(AuthContext);
 	return (
 		<div>
 			<div className="navbar bg-base-100">
@@ -29,27 +32,8 @@ const Header = () => {
 							<li>
 								<a href="/">Item 1</a>
 							</li>
-							<li tabIndex={0}>
-								<a href="/" className="justify-between">
-									Parent
-									<svg
-										className="fill-current"
-										xmlns="http://www.w3.org/2000/svg"
-										width="24"
-										height="24"
-										viewBox="0 0 24 24"
-									>
-										<path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-									</svg>
-								</a>
-								<ul className="p-2">
-									<li>
-										<a href="/">Submenu 1</a>
-									</li>
-									<li>
-										<a href="/">Submenu 2</a>
-									</li>
-								</ul>
+							<li>
+								<a href="/">Item 2</a>
 							</li>
 							<li>
 								<a href="/">Item 3</a>
@@ -63,39 +47,31 @@ const Header = () => {
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal px-1">
 						<li>
-							<a href="/">Item 1</a>
-						</li>
-						<li tabIndex={0}>
-							<a href="/">
-								Parent
-								<svg
-									className="fill-current"
-									xmlns="http://www.w3.org/2000/svg"
-									width="20"
-									height="20"
-									viewBox="0 0 24 24"
-								>
-									<path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-								</svg>
-							</a>
-							<ul className="p-2">
-								<li>
-									<a href="/">Submenu 1</a>
-								</li>
-								<li>
-									<a href="/">Submenu 2</a>
-								</li>
-							</ul>
+							<Link to="/" className="font-bold">
+								Home
+							</Link>
 						</li>
 						<li>
-							<a href="/">Item 3</a>
+							{user?.email ? <Link to="/add-service">Add Service</Link> : null}
+						</li>
+						<li>
+							{user?.email ? <Link to="/reviews">My Reviews</Link> : null}
+						</li>
+						<li>
+							<Link href="/">Blog</Link>
 						</li>
 					</ul>
 				</div>
 				<div className="navbar-end">
-					<a href="/" className="btn">
-						Get started
-					</a>
+					{user?.email ? (
+						<Link to="/login" className="btn">
+							Logout
+						</Link>
+					) : (
+						<Link to="/login" className="btn">
+							Login
+						</Link>
+					)}
 				</div>
 			</div>
 		</div>
