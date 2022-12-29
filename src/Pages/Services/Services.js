@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AllServices from "../AllServices/AllServices";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
@@ -15,7 +14,7 @@ const Services = () => {
 			<div className="text-center py-10">
 				<p className="text-3xl text-blue-600">Services</p>
 				<h2 className="text-1xl mt-5">
-					We will work with you to develop individualised care plans, including
+					I will work with you to develop individualised care plans, including
 					management of chronic diseases. If we cannot assist, <br></br> we can
 					provide referrals or advice about the type of practitioner you
 					require. We treat all enquiries sensitively and in the strictest
@@ -26,7 +25,6 @@ const Services = () => {
 				{services.map((service) => (
 					<>
 						<ServiceCard key={service._id} service={service}></ServiceCard>
-						<AllServices key={service._id} service={service}></AllServices>
 					</>
 				))}
 			</div>

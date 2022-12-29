@@ -99,6 +99,9 @@ const AddService = () => {
 						placeholder="Description"
 					></textarea>
 				</div>
+				<div className="flex justify-center mt-5">
+					<input className="btn btn-primary" type="submit" value="Submit" />
+				</div>
 			</form>
 		</div>
 	);

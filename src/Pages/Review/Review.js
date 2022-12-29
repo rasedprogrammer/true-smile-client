@@ -1,6 +1,39 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import ReviewCard from "./ReviewCard";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Review = () => {
+	const { user } = useContext(AuthContext);
+	const [reviews, setReviews] = useState([]);
+
+	useEffect(() => {
+		fetch(`http://localhost:5000/reviews?reviewerEmail=${user?.email}`)
+			.then((response) => response.json())
+			.then((data) => setReviews(data));
+	}, [user?.email]);
+
+	const handleDelete = (id) => {
+		const deleteConfirm = window.confirm("Are you sure you want to delete?");
+		if (deleteConfirm) {
+			fetch(`http://localhost:5000/reviews/${id}`, {
+				method: "DELETE",
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					if (data.deletedCount > 0) {
+						toast.success("Review Deleted Successfully");
+						const remaining = reviews.filter(
+							(reviewCount) => reviewCount._id !== id
+						);
+						setReviews(remaining);
+					}
+					<ToastContainer />;
+				});
+		}
+	};
 	return (
 		<div className="overflow-x-auto my-10">
 			<h1 className="text-center text-5xl text-blue-600 border my-5 p-3">
@@ -9,24 +42,24 @@ const Review = () => {
 			<table className="table table-zebra w-full">
 				<thead>
 					<tr>
-						<th className="text-lg">SL</th>
 						<th className="text-lg">Name</th>
 						<th className="text-lg">Review</th>
 						<th className="text-center text-lg">Action</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<th>1</th>
-						<td>Cy Ganderton</td>
-						<td>Quality Control Specialist</td>
-						<td className="text-center">
-							<button className="btn mr-5 sm:btn-sm">Update</button>
-							<button className="btn sm:btn-sm">Delete</button>
-						</td>
-					</tr>
-				</tbody>
 			</table>
+			{reviews.map((review) => (
+				<ReviewCard
+					key={review._id}
+					review={review}
+					handleDelete={handleDelete}
+				></ReviewCard>
+			))}
+			{reviews.length === 0 && (
+				<h1 className="text-3xl font-bold text-center mt-10 text-orange-600">
+					No Review Added Yet!!!
+				</h1>
+			)}
 		</div>
 	);
 };

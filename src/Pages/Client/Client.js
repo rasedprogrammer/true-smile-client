@@ -8,7 +8,7 @@ import client5 from "../../assets/client/logo5.png";
 const Client = () => {
 	return (
 		<div>
-			<h1 className="text-3xl text-center text-blue-600">Our Clients</h1>
+			<h1 className="text-3xl text-center text-blue-600">My Clients</h1>
 			<div className="flex justify-around items-center m-10">
 				<img className="w-40" src={client1} alt="" />
 				<img className="w-40" src={client2} alt="" />
