@@ -2,14 +2,17 @@ import React from "react";
 
 const Review = () => {
 	return (
-		<div className="overflow-x-auto">
+		<div className="overflow-x-auto my-10">
+			<h1 className="text-center text-5xl text-blue-600 border my-5 p-3">
+				My Review
+			</h1>
 			<table className="table table-zebra w-full">
 				<thead>
 					<tr>
-						<th></th>
-						<th>Name</th>
-						<th>Job</th>
-						<th>Favorite Color</th>
+						<th className="text-lg">SL</th>
+						<th className="text-lg">Name</th>
+						<th className="text-lg">Review</th>
+						<th className="text-center text-lg">Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -17,19 +20,10 @@ const Review = () => {
 						<th>1</th>
 						<td>Cy Ganderton</td>
 						<td>Quality Control Specialist</td>
-						<td>Blue</td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<td>Hart Hagerty</td>
-						<td>Desktop Support Technician</td>
-						<td>Purple</td>
-					</tr>
-					<tr>
-						<th>3</th>
-						<td>Brice Swyre</td>
-						<td>Tax Accountant</td>
-						<td>Red</td>
+						<td className="text-center">
+							<button className="btn mr-5 sm:btn-sm">Update</button>
+							<button className="btn sm:btn-sm">Delete</button>
+						</td>
 					</tr>
 				</tbody>
 			</table>
