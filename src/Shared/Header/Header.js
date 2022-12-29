@@ -46,7 +46,10 @@ const Header = () => {
 						</ul>
 					</div>
 					<a href="/" className="btn btn-ghost normal-case text-xl">
-						daisyUI
+						True{" "}
+						<span className="text-3xl font-semibold text-orange-600">
+							Smile
+						</span>
 					</a>
 				</div>
 				<div className="navbar-center hidden lg:flex">
@@ -63,7 +66,7 @@ const Header = () => {
 							{user?.email ? <Link to="/reviews">My Reviews</Link> : null}
 						</li>
 						<li>
-							<Link href="/">Blog</Link>
+							<Link to="/blog">Blog</Link>
 						</li>
 					</ul>
 				</div>

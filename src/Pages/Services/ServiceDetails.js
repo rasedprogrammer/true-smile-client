@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const ServiceDetails = () => {
@@ -97,7 +97,11 @@ const ServiceDetails = () => {
 								placeholder="Bio"
 							></textarea>
 						</div>
-						<input className="btn" type="submit" value="Submit" />
+						{user?.email ? (
+							<input className="btn" type="submit" value="Submit" />
+						) : (
+							alert("Please Login First For Review")
+						)}
 					</div>
 				</form>
 				<div className="serviceReviews">

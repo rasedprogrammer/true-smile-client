@@ -24,7 +24,6 @@ const ServiceCard = ({ service }) => {
 					<Link to={`/service/${_id}`}>
 						<button className="btn btn-primary">View More</button>
 					</Link>
-					<button className="btn btn-success">Add Review</button>
 				</div>
 			</div>
 		</div>
