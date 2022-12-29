@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import AddService from "../../Pages/AddService/AddService";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
@@ -34,11 +35,16 @@ const router = createBrowserRouter([
 				path: "/reviews",
 				element: <Review></Review>,
 			},
+
 			{
-				path: "/blog",
-				element: <Blog></Blog>,
+				path: "/add-service",
+				element: <AddService></AddService>,
 			},
 		],
+	},
+	{
+		path: "/blog",
+		element: <Blog></Blog>,
 	},
 ]);
 export default router;
