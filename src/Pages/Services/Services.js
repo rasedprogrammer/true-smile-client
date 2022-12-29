@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import AllServices from "../AllServices/AllServices";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
 	const [services, setService] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:5000/services")
+		fetch("http://localhost:5000/services-home")
 			.then((response) => response.json())
 			.then((data) => setService(data));
 	}, []);
@@ -22,9 +24,15 @@ const Services = () => {
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
 				{services.map((service) => (
-					<ServiceCard key={service._id} service={service}></ServiceCard>
+					<>
+						<ServiceCard key={service._id} service={service}></ServiceCard>
+						<AllServices key={service._id} service={service}></AllServices>
+					</>
 				))}
 			</div>
+			<Link to="/all-services" className="flex justify-center mb-10">
+				<button className="btn btn-primary">Service All</button>
+			</Link>
 		</div>
 	);
 };
