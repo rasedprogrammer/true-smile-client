@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
-	const { login } = useContext(AuthContext);
+	const { login, googleSignIn } = useContext(AuthContext);
 	const handleLogin = (event) => {
 		event.preventDefault();
 		const form = event.target;
@@ -17,6 +17,14 @@ const Login = () => {
 			.catch((error) => {
 				console.log(error);
 			});
+	};
+	const hanldeGoogleSignIn = () => {
+		googleSignIn()
+			.then((result) => {
+				const user = result.user;
+				console.log(user);
+			})
+			.catch((error) => console.log(error));
 	};
 	return (
 		<div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -115,7 +123,11 @@ const Login = () => {
 					</div>
 					<div>
 						<p className="font-bold text-center">Or</p>
-						<h1 className="text-center py-3 font-bold text-2xl">Google</h1>
+						<div className="flex justify-center mt-5">
+							<button onClick={hanldeGoogleSignIn} className="btn btn-primary">
+								Google
+							</button>
+						</div>
 					</div>
 				</form>
 			</div>

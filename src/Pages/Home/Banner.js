@@ -20,7 +20,7 @@ const Banner = () => {
 							require. We treat all enquiries sensitively and in the strictest
 							confidence..
 						</p>
-						<Link to="/services">
+						<Link to="">
 							<button className="btn btn-primary">Services</button>
 						</Link>
 					</div>

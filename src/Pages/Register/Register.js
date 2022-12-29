@@ -1,9 +1,10 @@
+import { error } from "daisyui/src/colors";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Register = () => {
-	const { createUser } = useContext(AuthContext);
+	const { createUser, googleSignIn } = useContext(AuthContext);
 	const handleSignUp = (event) => {
 		event.preventDefault();
 		const form = event.target;
@@ -17,6 +18,14 @@ const Register = () => {
 			.catch((error) => {
 				console.log(error);
 			});
+	};
+	const hanldeGoogleSignUp = () => {
+		googleSignIn()
+			.then((result) => {
+				const user = result.user;
+				console.log(user);
+			})
+			.catch((error) => console.log(error));
 	};
 	return (
 		<div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -100,7 +109,11 @@ const Register = () => {
 					</div>
 					<div>
 						<p className="font-bold text-center">Or</p>
-						<h1 className="text-center py-3 font-bold text-2xl">Google</h1>
+						<div className="flex justify-center mt-5">
+							<button onClick={hanldeGoogleSignUp} className="btn btn-primary">
+								Google
+							</button>
+						</div>
 					</div>
 				</form>
 			</div>
