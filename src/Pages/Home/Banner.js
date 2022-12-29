@@ -1,22 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import backgroundImg from "../../assets/background-home.jpg";
 
 const Banner = () => {
 	return (
 		<div>
 			<div
 				className="hero min-h-screen"
-				style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}
+				style={{ backgroundImage: `url(${backgroundImg})` }}
 			>
 				<div className="hero-overlay bg-opacity-60"></div>
 				<div className="hero-content text-center text-neutral-content">
-					<div className="max-w-md">
-						<h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-						<p className="mb-5">
-							Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-							excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-							et a id nisi.
+					<div className="max-w-xl">
+						<h1 className="mb-5 text-6xl font-bold">YOUR NEW SMILE</h1>
+						<p className="mb-5 max-w-xl">
+							We will work with you to develop individualised care plans,
+							including management of chronic diseases. If we cannot assist, we
+							can provide referrals or advice about the type of practitioner you
+							require. We treat all enquiries sensitively and in the strictest
+							confidence..
 						</p>
-						<button className="btn btn-primary">Get Started</button>
+						<Link to="/services">
+							<button className="btn btn-primary">Services</button>
+						</Link>
 					</div>
 				</div>
 			</div>
