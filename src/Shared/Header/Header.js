@@ -35,13 +35,20 @@ const Header = () => {
 							className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 						>
 							<li>
-								<a href="/">Item 1</a>
+								<Link to="/" className="font-bold">
+									Home
+								</Link>
 							</li>
 							<li>
-								<a href="/">Item 2</a>
+								{user?.email ? (
+									<Link to="/add-service">Add Service</Link>
+								) : null}
 							</li>
 							<li>
-								<a href="/">Item 3</a>
+								{user?.email ? <Link to="/reviews">My Reviews</Link> : null}
+							</li>
+							<li>
+								<Link to="/blog">Blog</Link>
 							</li>
 						</ul>
 					</div>
