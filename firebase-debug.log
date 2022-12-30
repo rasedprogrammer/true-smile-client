@@ -1,0 +1,115 @@
+[debug] [2022-12-30T15:44:56.838Z] ----------------------------------------------------------------------
+[debug] [2022-12-30T15:44:56.840Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MSI\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-30T15:44:56.841Z] CLI Version:   11.19.0
+[debug] [2022-12-30T15:44:56.841Z] Platform:      win32
+[debug] [2022-12-30T15:44:56.841Z] Node Version:  v16.17.1
+[debug] [2022-12-30T15:44:56.848Z] Time:          Fri Dec 30 2022 21:44:56 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-30T15:44:56.848Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-30T15:44:56.914Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-30T15:44:56.915Z] > authorizing via signed-in user (rasedprogrammer@gmail.com)
+[debug] [2022-12-30T15:44:56.915Z] [iam] checking project true-smile-baad7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-30T15:44:56.916Z] > refreshing access token with scopes: []
+[debug] [2022-12-30T15:44:56.918Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-30T15:44:56.918Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-30T15:44:57.482Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-30T15:44:57.482Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-30T15:44:57.492Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/true-smile-baad7:testIamPermissions [none]
+[debug] [2022-12-30T15:44:57.492Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/true-smile-baad7:testIamPermissions x-goog-quota-user=projects/true-smile-baad7
+[debug] [2022-12-30T15:44:57.492Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/true-smile-baad7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-30T15:44:59.513Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/true-smile-baad7:testIamPermissions 200
+[debug] [2022-12-30T15:44:59.513Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/true-smile-baad7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-30T15:44:59.513Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/true-smile-baad7 [none]
+[debug] [2022-12-30T15:45:00.433Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/true-smile-baad7 200
+[debug] [2022-12-30T15:45:00.433Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/true-smile-baad7 {"projectId":"true-smile-baad7","projectNumber":"411256181915","displayName":"true-smile","name":"projects/true-smile-baad7","resources":{"hostingSite":"true-smile-baad7"},"state":"ACTIVE","etag":"1_993050eb-0fe3-47d1-8e66-278ba813be2d"}
+[info] 
+[info] === Deploying to 'true-smile-baad7'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-12-30T15:45:00.439Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/versions [none]
+[debug] [2022-12-30T15:45:00.439Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-12-30T15:45:03.577Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/versions 200
+[debug] [2022-12-30T15:45:03.577Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/versions {"name":"projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[true-smile-baad7]: beginning deploy... 
+[info] i  hosting[true-smile-baad7]: found 19 files in build 
+[debug] [2022-12-30T15:45:21.604Z] [hosting] uploading with 200 concurrency
+[debug] [2022-12-30T15:45:21.795Z] [hosting] hash cache [YnVpbGQ] stored for 19 files
+[debug] [2022-12-30T15:45:21.795Z] [hosting][hash queue][FINAL] {"max":184,"min":2,"avg":19.526315789473685,"active":0,"complete":19,"success":19,"errored":0,"retried":0,"total":19,"elapsed":189}
+[debug] [2022-12-30T15:45:21.796Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57:populateFiles [none]
+[debug] [2022-12-30T15:45:21.796Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57:populateFiles {"files":{"/favicon.png":"c641d514832182e068ca4c54f4377a7faba90de35f744d3a7748540b9e98f78e","/manifest.json":"4d10842eb20a88831e88afb6e0e1eda777523e7dabbced0bad17ac309a7586a8","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/asset-manifest.json":"7ef8088c312bb74e25f0f617a8eec08fd9ac664badcd05076eef3d5fc6a0f150","/index.html":"70af2f2af53796f3939efc273e610d0fd8144340c2d8fba7209b6e08a3e1fc89","/static/js/787.c85fc35b.chunk.js":"b017d0b479c24577fa29493c8e08a631ebdb55926c04b3791eff544327557638","/static/js/787.c85fc35b.chunk.js.map":"cec2ff030b7add8f73c075b1f405899f51ad2a7bab860125d33fc49acc5d39a3","/static/js/main.b112090a.js.LICENSE.txt":"103afdb1a6561bab70828a4c3f2d56b6408cd762d7f5318e0ffc03fcd45de9e7","/static/media/logo01.b05582e59590f36ec3f2.jpg":"2bf76949f58ea0e65a555a0eab83d438f6fd06d7151376e23c57d0fdc11ae017","/static/media/logo02.4311bedd86db76dba97e.png":"9da3c0d2e4ca0695949533c173f29b1a1bd1ff41854a1ca6b1e1d55d894dd865","/static/media/logo3.fe35b001224d10a42200.png":"12e9e4e91bb1a58d51e6277c833c7c452b7e1a2e876c5fb570113a46807dd251","/static/css/main.f718c9ff.css.map":"5381aa00c84812e65c107456210db3a97a64e01955926789c08d5e0b5f701c4c","/static/css/main.f718c9ff.css":"fb6742f825e4ba0cf1353518e24d5a257b5819b79c2fac95f5f9875847511698","/static/media/logo5.968babe21f21c8ee94c2.png":"77e771144a40e0bbdfbc28b5134d50ed2795718a96fc5805c641bce3ea31e487","/static/media/logo4.c88f776ea0ec3bbb957e.png":"2cd52cc8df0a93dc9ecc4f0df57083d0c7e66b5c47556d0f6abc02ea6c6149ad","/static/media/aboutUs.c03a078e283783b36ed0.jpeg":"03793674641147aae0878092b9918bdb362d718d64a7bb78e001cc1766d9cff4","/static/media/background-home.d565c347d7d3f39250d0.jpg":"23d1634407a6654034463c3e31d4a09eca84d0533e2bd17412e09b44905296f1","/static/js/main.b112090a.js":"87412ebbaece600f57e9674e5b3ee033edc0e6750a310f8c067ed962024592a8","/static/js/main.b112090a.js.map":"3b7c2a85d7261ee8f9faa1f327bb308257d27f1e8d60349223752073e66deaf5"}}
+[debug] [2022-12-30T15:45:23.291Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57:populateFiles 200
+[debug] [2022-12-30T15:45:23.291Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57:populateFiles {"uploadRequiredHashes":["70af2f2af53796f3939efc273e610d0fd8144340c2d8fba7209b6e08a3e1fc89","5381aa00c84812e65c107456210db3a97a64e01955926789c08d5e0b5f701c4c","3b7c2a85d7261ee8f9faa1f327bb308257d27f1e8d60349223752073e66deaf5","87412ebbaece600f57e9674e5b3ee033edc0e6750a310f8c067ed962024592a8","7ef8088c312bb74e25f0f617a8eec08fd9ac664badcd05076eef3d5fc6a0f150","fb6742f825e4ba0cf1353518e24d5a257b5819b79c2fac95f5f9875847511698"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files"}
+[debug] [2022-12-30T15:45:23.292Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/70af2f2af53796f3939efc273e610d0fd8144340c2d8fba7209b6e08a3e1fc89 [none]
+[debug] [2022-12-30T15:45:23.292Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/70af2f2af53796f3939efc273e610d0fd8144340c2d8fba7209b6e08a3e1fc89 [stream]
+[debug] [2022-12-30T15:45:23.293Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/5381aa00c84812e65c107456210db3a97a64e01955926789c08d5e0b5f701c4c [none]
+[debug] [2022-12-30T15:45:23.293Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/5381aa00c84812e65c107456210db3a97a64e01955926789c08d5e0b5f701c4c [stream]
+[debug] [2022-12-30T15:45:23.294Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/3b7c2a85d7261ee8f9faa1f327bb308257d27f1e8d60349223752073e66deaf5 [none]
+[debug] [2022-12-30T15:45:23.294Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/3b7c2a85d7261ee8f9faa1f327bb308257d27f1e8d60349223752073e66deaf5 [stream]
+[debug] [2022-12-30T15:45:23.295Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/87412ebbaece600f57e9674e5b3ee033edc0e6750a310f8c067ed962024592a8 [none]
+[debug] [2022-12-30T15:45:23.295Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/87412ebbaece600f57e9674e5b3ee033edc0e6750a310f8c067ed962024592a8 [stream]
+[debug] [2022-12-30T15:45:23.296Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/7ef8088c312bb74e25f0f617a8eec08fd9ac664badcd05076eef3d5fc6a0f150 [none]
+[debug] [2022-12-30T15:45:23.296Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/7ef8088c312bb74e25f0f617a8eec08fd9ac664badcd05076eef3d5fc6a0f150 [stream]
+[debug] [2022-12-30T15:45:23.298Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/fb6742f825e4ba0cf1353518e24d5a257b5819b79c2fac95f5f9875847511698 [none]
+[debug] [2022-12-30T15:45:23.299Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/fb6742f825e4ba0cf1353518e24d5a257b5819b79c2fac95f5f9875847511698 [stream]
+[debug] [2022-12-30T15:45:23.299Z] [hosting][populate queue][FINAL] {"max":1498,"min":1498,"avg":1498,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1505}
+[debug] [2022-12-30T15:45:23.299Z] [hosting] uploads queued: 6
+[debug] [2022-12-30T15:45:25.322Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/70af2f2af53796f3939efc273e610d0fd8144340c2d8fba7209b6e08a3e1fc89 200
+[debug] [2022-12-30T15:45:25.322Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/70af2f2af53796f3939efc273e610d0fd8144340c2d8fba7209b6e08a3e1fc89 [stream]
+[debug] [2022-12-30T15:45:25.326Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/7ef8088c312bb74e25f0f617a8eec08fd9ac664badcd05076eef3d5fc6a0f150 200
+[debug] [2022-12-30T15:45:25.326Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/7ef8088c312bb74e25f0f617a8eec08fd9ac664badcd05076eef3d5fc6a0f150 [stream]
+[debug] [2022-12-30T15:45:25.327Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/fb6742f825e4ba0cf1353518e24d5a257b5819b79c2fac95f5f9875847511698 200
+[debug] [2022-12-30T15:45:25.327Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/fb6742f825e4ba0cf1353518e24d5a257b5819b79c2fac95f5f9875847511698 [stream]
+[debug] [2022-12-30T15:45:26.006Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/5381aa00c84812e65c107456210db3a97a64e01955926789c08d5e0b5f701c4c 200
+[debug] [2022-12-30T15:45:26.006Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/5381aa00c84812e65c107456210db3a97a64e01955926789c08d5e0b5f701c4c [stream]
+[debug] [2022-12-30T15:45:26.640Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/87412ebbaece600f57e9674e5b3ee033edc0e6750a310f8c067ed962024592a8 200
+[debug] [2022-12-30T15:45:26.640Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/87412ebbaece600f57e9674e5b3ee033edc0e6750a310f8c067ed962024592a8 [stream]
+[debug] [2022-12-30T15:45:30.779Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/3b7c2a85d7261ee8f9faa1f327bb308257d27f1e8d60349223752073e66deaf5 200
+[debug] [2022-12-30T15:45:30.779Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57/files/3b7c2a85d7261ee8f9faa1f327bb308257d27f1e8d60349223752073e66deaf5 [stream]
+[debug] [2022-12-30T15:45:30.779Z] [hosting][upload queue][FINAL] {"max":7487,"min":2032,"avg":3275.1666666666665,"active":0,"complete":6,"success":6,"errored":0,"retried":0,"total":6,"elapsed":7488}
+[info] +  hosting[true-smile-baad7]: file upload complete 
+[debug] [2022-12-30T15:45:30.781Z] [hosting] deploy completed after 9189ms
+[debug] [2022-12-30T15:45:30.783Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "true-smile-baad7"
+    },
+    "version": "projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57"
+  }
+]
+[info] i  hosting[true-smile-baad7]: finalizing version... 
+[debug] [2022-12-30T15:45:30.785Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57 updateMask=status%2Cconfig
+[debug] [2022-12-30T15:45:30.785Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2022-12-30T15:45:32.642Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57 200
+[debug] [2022-12-30T15:45:32.642Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57 {"name":"projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-30T15:44:59.267396Z","createUser":{"email":"rasedprogrammer@gmail.com"},"finalizeTime":"2022-12-30T15:45:28.906217Z","finalizeUser":{"email":"rasedprogrammer@gmail.com"}}
+[debug] [2022-12-30T15:45:32.642Z] [hosting] finalized version for true-smile-baad7:[object Object]
+[info] +  hosting[true-smile-baad7]: version finalized 
+[info] i  hosting[true-smile-baad7]: releasing new version... 
+[debug] [2022-12-30T15:45:32.644Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/channels/live/releases versionName=projects%2F411256181915%2Fsites%2Ftrue-smile-baad7%2Fversions%2F1ac8d7c0b3b8da57
+[debug] [2022-12-30T15:45:32.644Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/channels/live/releases {}
+[debug] [2022-12-30T15:45:34.431Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/channels/live/releases 200
+[debug] [2022-12-30T15:45:34.431Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/true-smile-baad7/channels/live/releases {"name":"projects/411256181915/sites/true-smile-baad7/channels/live/releases/1672415130042749","version":{"name":"projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-30T15:44:59.267396Z","createUser":{"email":"rasedprogrammer@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp5EjxWlxyfuF03-nlwOkPXZgR2657-thQkifzru"},"finalizeTime":"2022-12-30T15:45:28.906217Z","finalizeUser":{"email":"rasedprogrammer@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp5EjxWlxyfuF03-nlwOkPXZgR2657-thQkifzru"}},"type":"DEPLOY","releaseTime":"2022-12-30T15:45:30.042749673Z","releaseUser":{"email":"rasedprogrammer@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp5EjxWlxyfuF03-nlwOkPXZgR2657-thQkifzru"}}
+[debug] [2022-12-30T15:45:34.431Z] [hosting] release: {"name":"projects/411256181915/sites/true-smile-baad7/channels/live/releases/1672415130042749","version":{"name":"projects/411256181915/sites/true-smile-baad7/versions/1ac8d7c0b3b8da57","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-12-30T15:44:59.267396Z","createUser":{"email":"rasedprogrammer@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp5EjxWlxyfuF03-nlwOkPXZgR2657-thQkifzru"},"finalizeTime":"2022-12-30T15:45:28.906217Z","finalizeUser":{"email":"rasedprogrammer@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp5EjxWlxyfuF03-nlwOkPXZgR2657-thQkifzru"}},"type":"DEPLOY","releaseTime":"2022-12-30T15:45:30.042749673Z","releaseUser":{"email":"rasedprogrammer@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AEdFTp5EjxWlxyfuF03-nlwOkPXZgR2657-thQkifzru"}}
+[info] +  hosting[true-smile-baad7]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/true-smile-baad7/overview
+[info] Hosting URL: https://true-smile-baad7.web.app
+[debug] [2022-12-30T15:45:44.769Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\MSI\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.
