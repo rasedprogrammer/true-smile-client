@@ -4,12 +4,15 @@ import backgroundImg from "../../assets/background-home.jpg";
 
 const Banner = () => {
 	return (
-		<div>
+		<div className=" rounded-xl">
 			<div
 				className="hero min-h-screen"
-				style={{ backgroundImage: `url(${backgroundImg})` }}
+				style={{
+					backgroundImage: `url(${backgroundImg})`,
+					borderRadius: `10px`,
+				}}
 			>
-				<div className="hero-overlay bg-opacity-60"></div>
+				<div className="hero-overlay bg-opacity-60 rounded-xl"></div>
 				<div className="hero-content text-center text-neutral-content">
 					<div className="max-w-xl">
 						<h1 className="mb-5 text-6xl font-bold">YOUR NEW SMILE</h1>

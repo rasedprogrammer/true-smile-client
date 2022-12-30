@@ -8,6 +8,7 @@ import Register from "../../Pages/Register/Register";
 import Review from "../../Pages/Review/Review";
 import ServiceDetails from "../../Pages/Services/ServiceDetails";
 import Blog from "../../Shared/Blog/Blog";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
 	{
@@ -30,27 +31,35 @@ const router = createBrowserRouter([
 				path: "/service/:id",
 				element: <ServiceDetails></ServiceDetails>,
 				loader: ({ params }) =>
-					fetch(`http://localhost:5000/service/${params.id}`),
+					fetch(`https://true-smile-server.vercel.app/service/${params.id}`),
 			},
 			{
 				path: "/reviews",
-				element: <Review></Review>,
+				element: (
+					<PrivateRoute>
+						<Review></Review>
+					</PrivateRoute>
+				),
 			},
 
 			{
 				path: "/add-service",
-				element: <AddService></AddService>,
+				element: (
+					<PrivateRoute>
+						<AddService></AddService>
+					</PrivateRoute>
+				),
 			},
 			{
 				path: "/all-services",
-				loader: () => fetch("http://localhost:5000/services"),
+				loader: () => fetch("https://true-smile-server.vercel.app/services"),
 				element: <AllServices></AllServices>,
 			},
+			{
+				path: "/blog",
+				element: <Blog></Blog>,
+			},
 		],
-	},
-	{
-		path: "/blog",
-		element: <Blog></Blog>,
 	},
 ]);
 export default router;

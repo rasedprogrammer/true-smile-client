@@ -5,13 +5,13 @@ import ServiceCard from "./ServiceCard";
 const Services = () => {
 	const [services, setService] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:5000/services-home")
+		fetch("https://true-smile-server.vercel.app/services-home")
 			.then((response) => response.json())
 			.then((data) => setService(data));
 	}, []);
 	return (
 		<div>
-			<div className="text-center py-10">
+			<div className="text-center bg-base-200 p-5 rounded-xl">
 				<p className="text-3xl text-blue-600">Services</p>
 				<h2 className="text-1xl mt-5">
 					I will work with you to develop individualised care plans, including
@@ -21,14 +21,17 @@ const Services = () => {
 					confidence.
 				</h2>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 bg-base-200 p-5 rounded-xl">
 				{services.map((service) => (
 					<>
 						<ServiceCard key={service._id} service={service}></ServiceCard>
 					</>
 				))}
 			</div>
-			<Link to="/all-services" className="flex justify-center mb-10">
+			<Link
+				to="/all-services"
+				className="flex justify-center mb-10 bg-base-200 p-5 rounded-xl"
+			>
 				<button className="btn btn-primary">Service All</button>
 			</Link>
 		</div>

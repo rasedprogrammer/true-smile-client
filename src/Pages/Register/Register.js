@@ -1,10 +1,10 @@
-import { error } from "daisyui/src/colors";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Register = () => {
 	const { createUser, googleSignIn } = useContext(AuthContext);
+
 	const handleSignUp = (event) => {
 		event.preventDefault();
 		const form = event.target;

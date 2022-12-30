@@ -1,4 +1,6 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddService = () => {
 	const handleServiceAdd = (event) => {
@@ -18,7 +20,7 @@ const AddService = () => {
 			rating: serviceRating,
 		};
 
-		fetch("http://localhost:5000/services", {
+		fetch("https://true-smile-server.vercel.app/services", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -28,10 +30,10 @@ const AddService = () => {
 			.then((response) => response.json())
 			.then((data) => {
 				if (data.acknowledged) {
-					alert("Service Added Successfully!");
+					toast.success("Service Added Successfully");
 					form.reset();
 				}
-				console.log(data);
+				<ToastContainer />;
 			})
 			.catch((error) => {
 				console.log(error);

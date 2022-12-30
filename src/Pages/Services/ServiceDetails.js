@@ -13,7 +13,7 @@ const ServiceDetails = () => {
 	const notify = () => toast.success("Review Added Successfully!");
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/service-reviews?service=${_id}`)
+		fetch(`https://true-smile-server.vercel.app/service-reviews?service=${_id}`)
 			.then((response) => response.json())
 			.then((data) => setServiceReviews(data))
 			.catch((error) => console.log(error));
@@ -36,7 +36,7 @@ const ServiceDetails = () => {
 			reviewerMessage: review,
 		};
 
-		fetch("http://localhost:5000/reviews", {
+		fetch("https://true-smile-server.vercel.app/reviews", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

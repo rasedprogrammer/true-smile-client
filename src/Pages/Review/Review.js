@@ -9,7 +9,9 @@ const Review = () => {
 	const [reviews, setReviews] = useState([]);
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/reviews?reviewerEmail=${user?.email}`)
+		fetch(
+			`https://true-smile-server.vercel.app/reviews?reviewerEmail=${user?.email}`
+		)
 			.then((response) => response.json())
 			.then((data) => setReviews(data));
 	}, [user?.email]);
@@ -17,7 +19,7 @@ const Review = () => {
 	const handleDelete = (id) => {
 		const deleteConfirm = window.confirm("Are you sure you want to delete?");
 		if (deleteConfirm) {
-			fetch(`http://localhost:5000/reviews/${id}`, {
+			fetch(`https://true-smile-server.vercel.app/reviews/${id}`, {
 				method: "DELETE",
 			})
 				.then((response) => response.json())
